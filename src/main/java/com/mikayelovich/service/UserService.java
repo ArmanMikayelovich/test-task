@@ -1,12 +1,14 @@
 package com.mikayelovich.service;
 
 import com.mikayelovich.model.UserEntity;
+import com.mikayelovich.model.dto.UserDto;
 
 import java.util.List;
 
 public interface UserService {
 
-    UserEntity getById(Long id);
+    UserEntity getEntityById(Long id);
+    UserDto getById(Long id);
 
     void save(UserEntity userEntity);
 
@@ -15,5 +17,5 @@ public interface UserService {
     void delete(Long userId);
 
 
-    List<UserEntity> getAllUsers();
+    List<UserDto> getAllUsers();
 }
