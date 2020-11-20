@@ -1,7 +1,7 @@
 package com.mikayelovich.service.impl;
 
 import com.mikayelovich.dao.UserDao;
-import com.mikayelovich.entity.UserEntity;
+import com.mikayelovich.model.UserEntity;
 import com.mikayelovich.service.UserService;
 import com.mikayelovich.service.impl.exception.NotFoundException;
 import org.springframework.stereotype.Service;

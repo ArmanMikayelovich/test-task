@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE hibernate-configuration PUBLIC
         "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
-        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration xmlns="http://www.hibernate.org/xsd/orm/cfg">
     <session-factory>
         <property name="hibernate.archive.autodetection">class,hbm</property>
@@ -17,11 +17,11 @@
         </property>
 
         <property name="hibernate.hbm2ddl.auto">validate</property>
-        <property name="hibernate.c3po.min_size">5</property>
+        <property name="hibernate.c3po.min_size">7</property>
         <property name="hibernate.c3po.max_size">20</property>
 
 <!--        Determines how many connections at a time c3p0 will try to acquire when the pool is exhausted.-->
-        <property name="hibernate.c3po.acquire_increment">10</property>
+        <property name="hibernate.c3po.acquire_increment">2</property>
 
         <property name="hibernate.c3po.max_statements">150</property>
 

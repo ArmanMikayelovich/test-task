@@ -1,6 +1,6 @@
 package com.mikayelovich.dao;
 
-import com.mikayelovich.entity.UserEntity;
+import com.mikayelovich.model.UserEntity;
 
 import java.util.List;
 import java.util.Optional;

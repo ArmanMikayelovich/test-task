@@ -1,6 +1,7 @@
 package com.mikayelovich.config;
 
-import com.mikayelovich.entity.UserEntity;
+import com.mikayelovich.model.RoleEntity;
+import com.mikayelovich.model.UserEntity;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -29,7 +30,7 @@ public class HibernateConfig {
     public LocalSessionFactoryBean getSessionFactory() {
         LocalSessionFactoryBean factoryBean = new LocalSessionFactoryBean();
         factoryBean.setConfigLocation(context.getResource("classpath:hibernate.cfg.xml")); // load hibernate config from that file
-        factoryBean.setAnnotatedClasses(UserEntity.class);
+        factoryBean.setAnnotatedClasses(UserEntity.class, RoleEntity.class);
         return factoryBean;
     }
 

@@ -1,6 +1,6 @@
 package com.mikayelovich.service;
 
-import com.mikayelovich.entity.UserEntity;
+import com.mikayelovich.model.UserEntity;
 
 import java.util.List;
 

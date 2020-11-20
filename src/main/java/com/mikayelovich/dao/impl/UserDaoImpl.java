@@ -1,7 +1,7 @@
 package com.mikayelovich.dao.impl;
 
 import com.mikayelovich.dao.UserDao;
-import com.mikayelovich.entity.UserEntity;
+import com.mikayelovich.model.UserEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
