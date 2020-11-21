@@ -4,6 +4,7 @@ import com.mikayelovich.dao.UserDao;
 import com.mikayelovich.model.UserEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -25,6 +26,14 @@ public class UserDaoImpl implements UserDao {
         return Optional.ofNullable(userEntity);
     }
 
+    @Override
+    public Optional<UserEntity> getByUsername(String username) {
+        final Query<UserEntity> findByUsernameQuery = currentSession()
+                .createQuery("select u from UserEntity u where u.username = :username", UserEntity.class);
+
+        final UserEntity userEntity = findByUsernameQuery.setParameter("username", username).getSingleResult();
+        return Optional.ofNullable(userEntity);
+    }
 
     @Override
     public void save(UserEntity userEntity) {

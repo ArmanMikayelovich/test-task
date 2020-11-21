@@ -5,7 +5,7 @@ import com.mikayelovich.model.UserEntity;
 import com.mikayelovich.model.dto.UserDto;
 import com.mikayelovich.service.Mapper;
 import com.mikayelovich.service.UserService;
-import com.mikayelovich.service.impl.exception.NotFoundException;
+import com.mikayelovich.util.exception.NotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

@@ -2,6 +2,7 @@ package com.mikayelovich.service.impl;
 
 import com.mikayelovich.model.RoleEntity;
 import com.mikayelovich.model.UserEntity;
+import com.mikayelovich.model.dto.AuthenticationDto;
 import com.mikayelovich.model.dto.UserDto;
 import com.mikayelovich.model.enums.UserRole;
 import com.mikayelovich.service.Mapper;
@@ -18,7 +19,7 @@ public class MapperImpl implements Mapper {
     @Override
     public UserDto map(UserEntity entity, UserDto dto) {
         dto.setId(entity.getId());
-        dto.setName(entity.getName());
+        dto.setUsername(entity.getUsername());
         final Set<UserRole> roles = entity.getRoleEntitySet()
                 .stream()
                 .map(RoleEntity::getRole)
@@ -26,5 +27,12 @@ public class MapperImpl implements Mapper {
 
         dto.setRoles(roles);
         return dto;
+    }
+
+    @Override
+    public UserEntity map(AuthenticationDto authDto, UserEntity userEntity) {
+        userEntity.setPassword(authDto.getPassword());
+        userEntity.setUsername(authDto.getUsername());
+        return userEntity;
     }
 }

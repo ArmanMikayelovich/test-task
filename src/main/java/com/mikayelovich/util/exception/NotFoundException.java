@@ -1,4 +1,4 @@
-package com.mikayelovich.service.impl.exception;
+package com.mikayelovich.util.exception;
 
 public class NotFoundException extends RuntimeException {
     public NotFoundException(String message) {

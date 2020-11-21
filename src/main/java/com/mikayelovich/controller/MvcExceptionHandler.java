@@ -1,6 +1,6 @@
 package com.mikayelovich.controller;
 
-import com.mikayelovich.service.impl.exception.NotFoundException;
+import com.mikayelovich.util.exception.NotFoundException;
 import com.mikayelovich.util.ApiError;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

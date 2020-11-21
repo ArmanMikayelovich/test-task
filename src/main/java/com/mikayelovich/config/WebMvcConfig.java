@@ -19,6 +19,9 @@ import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
 @ComponentScan(basePackages = {"com.mikayelovich"})
 public class WebMvcConfig implements WebMvcConfigurer {
 
+
+
+
     @Bean
     public View jsonTemplate() {
         MappingJackson2JsonView view = new MappingJackson2JsonView();

@@ -7,6 +7,9 @@ import java.util.Optional;
 
 public interface UserDao {
     Optional<UserEntity> getById(Long id);
+    Optional<UserEntity> getByUsername(String username);
+
+
 
     void save(UserEntity userEntity);
 

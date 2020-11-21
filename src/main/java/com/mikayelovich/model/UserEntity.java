@@ -16,9 +16,13 @@ import java.util.Set;
 public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(updatable = false)
     private Long id;
 
-    private String name;
+    @Column(unique = true)
+    private String username;
+
+    private String password;
 
     @ToString.Exclude
     @ManyToMany(fetch = FetchType.EAGER)
@@ -33,13 +37,12 @@ public class UserEntity {
         if (o == null || getClass() != o.getClass()) return false;
         UserEntity that = (UserEntity) o;
         return Objects.equals(id, that.id) &&
-                Objects.equals(name, that.name);
+                Objects.equals(username, that.username) &&
+                Objects.equals(password, that.password);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name);
+        return Objects.hash(id, username, password);
     }
-
-
 }
