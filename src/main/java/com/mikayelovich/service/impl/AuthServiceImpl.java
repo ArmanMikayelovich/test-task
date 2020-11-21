@@ -3,14 +3,19 @@ package com.mikayelovich.service.impl;
 import com.mikayelovich.dao.UserDao;
 import com.mikayelovich.model.UserEntity;
 import com.mikayelovich.model.dto.AuthenticationDto;
+import com.mikayelovich.model.enums.UserRole;
 import com.mikayelovich.service.AuthService;
 import com.mikayelovich.service.Mapper;
 import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 @Transactional(readOnly = true)
@@ -50,6 +55,13 @@ public class AuthServiceImpl implements AuthService {
 
     private boolean isPasswordsMatches(String password, String hashedPassword) {
         return passwordEncoder.matches(password, hashedPassword);
+    }
+
+    @Override
+    public Set<GrantedAuthority> getAuthoritiesFromRoles(Set<UserRole> roles) {
+        return roles.stream()
+                .map(role -> new SimpleGrantedAuthority(role.toString()))
+                .collect(Collectors.toSet());
     }
 
 }

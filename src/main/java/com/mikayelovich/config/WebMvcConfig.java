@@ -1,5 +1,6 @@
 package com.mikayelovich.config;
 
+import com.mikayelovich.filter.JwtTokenFilter;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -18,6 +19,7 @@ import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
 @EnableWebMvc
 @ComponentScan(basePackages = {"com.mikayelovich"})
 public class WebMvcConfig implements WebMvcConfigurer {
+
 
 
 
